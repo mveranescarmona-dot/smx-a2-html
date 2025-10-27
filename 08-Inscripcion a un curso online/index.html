@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscripció al Curs Online de Desenvolupament Web</title>
+</head>
+<body>
+<header>
+    <h1>Inscripció al Curs Online de Desenvolupament Web</h1>
+</header>
+<main>
+    <form method="get" action="/inscripcio">
+    <!-- DADES PERSONALS -->
+    <fieldset>
+        <legend>Dades Personals</legend>
+        <label for="nom">Nom complet:</label><br>
+        <input type="text" id="nom" name="nom" required minlength="3" maxlength="100"><br><br>
+        <label for="email">Correu electrònic:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="telefon">Telèfon:</label><br>
+        <input type="tel" id="telefon" name="telefon" required pattern="^\+?\d{7,15}$" placeholder="+34600123456"><br><br>
+        <label for="data_naixement">Data de naixement:</label><br>
+        <input type="date" id="data_naixement" name="data_naixement" required><br><br>
+    </fieldset>
+    <br>
+    <!-- TIPUS DE CURS I EXPERIÈNCIA PRÈVIA -->
+    <fieldset>
+        <legend>Tipus de Curs i Experiència Prèvia</legend>
+        <label for="curs">Selecciona els cursos que t'interessen:</label><br>
+        <select id="curs" name="curs[]" multiple size="6">
+        <optgroup label="Programació">
+            <option value="programacio_basica">Programació Bàsica</option>
+            <option value="desenvolupament_web">Desenvolupament Web</option>
+            <option value="desenvolupament_videojocs">Desenvolupament de Videojocs</option>
+        </optgroup>
+        <optgroup label="Sistemes i Xarxes">
+            <option value="administracio_sistemes">Administració de Sistemes</option>
+            <option value="ciberseguretat">Ciberseguretat</option>
+        </optgroup>
+        </select>
+        <br><br>
+        <p>Nivell d'experiència prèvia:</p>
+        <input type="radio" id="novell" name="experiencia" value="novell" required>
+        <label for="novell">Novell</label><br>
+        <input type="radio" id="intermedi" name="experiencia" value="intermedi">
+        <label for="intermedi">Intermedi</label><br>
+        <input type="radio" id="avançat" name="experiencia" value="avançat">
+        <label for="avançat">Avançat</label><br>
+    </fieldset>
+    <br>
+    <!-- INTERESSOS I MOTIVACIÓ -->
+    <fieldset>
+        <legend>Interessos i Motivació del Curs</legend>
+        <p>Selecciona els teus interessos:</p>
+        <input type="checkbox" id="projectes" name="interessos" value="projectes">
+        <label for="projectes">Projectes pràctics</label><br>
+        <input type="checkbox" id="tutories" name="interessos" value="tutories">
+        <label for="tutories">Tutories online</label><br>
+        <input type="checkbox" id="certificats" name="interessos" value="certificats">
+        <label for="certificats">Certificats oficials</label><br>
+        <input type="checkbox" id="xarxa" name="interessos" value="xarxa">
+        <label for="xarxa">Xarxa professional</label><br><br>
+        <label for="motivacio">Explica breument per què vols realitzar el curs:</label><br>
+        <textarea id="motivacio" name="motivacio" required minlength="50" maxlength="500" rows="5" cols="40" placeholder="Escriu aquí la teva motivació..."></textarea><br><br>
+        <label for="lloc_treball">Tipus de lloc de treball que t'interessa:</label><br>
+        <input list="llocs" id="lloc_treball" name="lloc_treball" placeholder="Selecciona o escriu...">
+        <datalist id="llocs">
+        <option value="Ciberseguretat">
+        <option value="DevOps">
+        <option value="Frontend">
+        <option value="Backend">
+        <option value="Dades / Data Science">
+        <option value="Enginyeria de Software">
+        </datalist>
+    </fieldset>
+    <br>
+    <!-- FITXER I ACCEPTACIÓ DE CONDICIONS -->
+    <fieldset>
+        <legend>Fitxer i Acceptació de Condicions</legend>
+        <label for="document">Adjunta el teu document (només .pdf):</label><br>
+        <input type="file" id="document" name="document" accept=".pdf"><br><br>
+        <input type="checkbox" id="condicions" name="condicions" required>
+        <label for="condicions">Accepto les condicions per realitzar el curs.</label><br>
+    </fieldset>
+    <br>
+    <input type="submit" value="Enviar Inscripció">
+    </form>
+</main>
+<footer>
+    <p>&copy; 2025 Curs Online de Desenvolupament Web</p>
+    <p>Contacte: <a href="mailto:suport@cursosonline.cat">suport@cursosonline.cat</a> | 
+    <a href="/ajuda">Enllaç de suport</a></p>
+</footer>
+</body>
+</html>
